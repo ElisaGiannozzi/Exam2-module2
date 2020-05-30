@@ -8,9 +8,12 @@
 <body>
     <div id="app">
         <h2>News Feed</h2>
-        <div v-for="source in sources">
-           {{source.name}}
-        </div>
+        <select v-model="selected" @change="getSelected">
+            <option disabled value="">Select source</option>
+            <option v-for = 'source in sources':value = '{id: source.id, name: source.name}'>{{source.name}}</option>    
+        </select>
+        <button type="button">Search</button>
+        <div id="articles-container" v-for = 'article in articles'>{{article.content}}</div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="script.js"></script> 
