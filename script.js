@@ -11,10 +11,10 @@ const app = new Vue ({
             fetch('https://newsapi.org/v2/everything?sources='+selectedSource+'&apiKey=6a263bbf656948fb932c3e509acaaf7d')
             .then(response => response.json())
             .then(json => {
-                if (selectedSource === 0) {
-                    $().alert('no available articles');
-                } else { 
-                    this.articles = json.articles
+                if (json.articles.length === 0) {
+                    alert('No available article for the selected source')
+                } else {
+                 this.articles = json.articles
                 }
             })
         }
@@ -30,7 +30,3 @@ const app = new Vue ({
 
     }    
 }) 
-
-
-
-
