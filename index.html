@@ -18,6 +18,9 @@
             <option v-for = 'source in sources':value = '{id: source.id, name: source.name}'>{{source.name}}</option>    
         </select>
         <div class="card-columns">
+            <!-- <div v-show="articles.length === 0">
+                <p>No article available for the source selected.</p>
+            </div> -->
             <div class="card" v-for = 'article in articles'>
                 <img class="card-img-top" v-bind:src="article.urlToImage" alt="article image">
                 <div class="card-block">

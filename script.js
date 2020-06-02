@@ -10,7 +10,7 @@ const app = new Vue ({
             let selectedSource = this.selected.id; 
             fetch('https://newsapi.org/v2/everything?sources='+selectedSource+'&apiKey=6a263bbf656948fb932c3e509acaaf7d')
             .then(response => response.json())
-            .then(json => {
+            .then(json => {   
                 if (json.articles.length === 0) {
                     alert('No available article for the selected source')
                 } else {
